@@ -3,7 +3,10 @@ build:
   steps:
     - script:
         name: Install Node.js
-        code: apt-get install -y nodejs
+        code: |
+          sudo apt-get update
+          sudo apt-get -y install nodejs npm
+          sudo update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 
     - script:
       name: Bundler setting
