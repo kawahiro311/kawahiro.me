@@ -2,6 +2,10 @@ box: ruby
 build:
   steps:
     - script:
+        name: Install Node.js
+        code: apt-get install -y nodejs
+
+    - script:
       name: Bundler setting
       code: bundle config build.nokogiri --use-system-libraries
 
